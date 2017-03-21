@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYGOLDENART</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: black;
+            transition: all 1s ease;
+        }
+
+ /* Header with Logo =============== */
+/* ================================ */
+
+        .mga-header__logo-box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .mga-header__logo-box::before {
+            content: '';
+            position: absolute;
+            z-index: 15;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background: url(img/logo/mga-img-logo-4-mask-15.png) center center no-repeat;
+        }
+
+        .mga-header__logo-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 1s ease;
+        }
+
+        .mga-header__logo-img--m {
+            z-index: 20;
+        }
+
+        .mga-header__logo-img--g {
+            z-index: 10;
+            transform: rotate(0deg);
+        }
+
+        .mga-header__logo-img--a {
+            z-index: 20;
+        }
+
+        .mga-header__logo-box:hover .mga-header__logo-img--g {
+            transform: rotate(418deg);
+        }
+
+        .mga_header__title {
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+ /* Sections======================== */
+/* ================================ */
+
+        .mga-section {
+            position: relative;
+            top: 0;
+            width: 100%;
+            background-size: contain;
+            background: transparent no-repeat top;
+            filter: brightness(100%);
+            transition: all .4s ease
+
+        }
+
+        .mga-section:hover{
+            filter: brightness(100%);
+        }
+
+        .mga-section--about {
+            background-image: url(img/mga-img-bg-1-glitter.png);
+            z-index: 0;
+            height: 450px;
+            top: 0px;
+            margin-bottom: -210px;
+        }
+
+        .mga-section--gallery {
+            background-image: url(img/mga-img-bg-2-wood.png);
+            z-index: 10;
+            height: 800px;
+            top: 0px;
+
+        }
+
+        .mga-section--contact {
+            background-image: url(img/mga-img-bg-3-brush.png);
+            z-index: 20;
+            height: 500px;
+            top: 0px;
+        }
+
+        .mga-section--footer-cover {
+            background-image: url(img/mga-img-bg-4-stars.png);
+            z-index: 30;
+            height: 600px;
+            top: 0px;
+        }
+
+
+ /* Card =========================== */
+/* ================================ */
+
+        .mga-section__card {
+            position: relative;
+            padding: 20px 20px 30px;
+            background-size: cover;
+            background: url(img/mga-img-bg-91-card-film-1000x600.jpg) no-repeat;
+            border-top: 1px solid #67624b;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px 0px black;
+            color: white;
+            overflow: hidden;
+
+        }
+
+        .mga-section__card--about {
+            z-index: 5;
+            top: 0px;
+            width: 100%;
+            height: auto;
+            margin-top: 75px;
+            background-position: right top;
+        }
+
+        .mga-section__card--gallery {
+            z-index: 15;
+            top: 0px;
+            width: 200px;
+            height: 400px;
+            background-position: left bottom;
+        }
+
+        .mga-section__card--contact {
+            z-index: 25;
+            top: 0px;
+            width: 200px;
+            height: 400px;
+            background-position: center center
+        }
+
+        .mga-section__heading {
+            text-align: center;
+            color: gold;
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 2px 11px rgba(255, 215, 0, 0.50);
+        }
+
+        .mga_section__overline {
+            border-top: 1px solid gold;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mga-section__text {
+            margin-bottom: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 3px 2px 11px rgba(255, 255, 255, 0.50);
+        }
+
+ /* Additional Graphics ============ */
+/* ================================ */
+
+        .mga-section__graphics {
+
+        }
+
+
+
+ /* Shadows ======================== */
+/* ================================ */
+
+        .mga-section--bg-side-shadows {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mga-section--bg-side-shadows::before {
+            -webkit-box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            -moz-box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            box-shadow: inset 75px 0px 40px -40px rgba(0, 0, 0, 1);
+            content: '';
+            position: absolute;
+            z-index: 40;
+            top: 0;
+            left: 14px;
+            width: 65px;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .mga-section--bg-side-shadows::after {
+            -webkit-box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            -moz-box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            box-shadow: inset -75px 0px 40px -40px rgba(0, 0, 0, 1);
+            content: '';
+            position: absolute;
+            z-index: 40;
+            top: 0;
+            right: 14px;
+            width: 65px;
+            height: 100%;
+            display: inline-block;
+        }
+
+ /* Utilities ====================== */
+/* ================================ */
+
+.u-color-gold {
+    color: gold;
+}
+
+
+
+ /* ================================ */
+/* ================================ */
+
+
+    </style>
+</head>
+<body>
+
+<div class="container mga-section--bg-side-shadows">
+
+    <!-- 0. Header -->
+
+    <div class="mga-section mga-section--header">
+        <div class="row">
+            <div class="col-12">
+                <div class="mga-header__logo-box">
+                    <img class="mga-header__logo-img mga-header__logo-img--m" src="img/logo/mga-img-logo-1-m-20.png"
+                         alt="M - MYGOLDENART">
+                    <img class="mga-header__logo-img mga-header__logo-img--g" src="img/logo/mga-img-logo-2-g-10.png"
+                         alt="G - MYGOLDENART">
+                    <img class="mga-header__logo-img mga-header__logo-img--a" src="img/logo/mga-img-logo-3-a-20.png"
+                         alt="A - MYGOLDENART">
+                </div>
+                <h1 class="mga_header__title">MY<span class="u-color-gold">GOLDEN</span>ART</h1>
+            </div>
+        </div>
+    </div><!--/mga-header-->
+
+    <!-- 1. About -->
+
+        <div class="mga-section mga-section--about">
+            <div class="row">
+                <div class="offset-xs-2 col-xs-8 ">
+                    <div class="mga-section__card mga-section__card--about">
+                        <h2 class="mga-section__heading">About <span class="sr-only">mygoldenart creator - Anna</span></h2>
+                        <p class="mga-section__text mga_section__overline">Anna is an artist based in Warsaw, Poland.</p>
+                        <p class="mga-section__text">Her art is an expression of gratitude and universal love.</p>
+                        <p class="mga-section__text">She portrays everything with natural honesty and sensitivity.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--/mga-about-->
+
+
+    <!-- 2. Gallery -->
+
+        <div class="mga-section mga-section--gallery">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="mga-section__graphics">
+                        <img src="img/mga-img-g-1-heart.png">
+                    </div>
+                </div>
+                <div class="col-md-3 offset-md-2">
+                    <div class="mga-section__card mga-section__card--gallery">
+                        <h2>Gallery <span class="sr-only">with works of Anna</span></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--/mga-gallery-->
+
+
+
+    <!-- 3. Contact -->
+
+
+        <div class="mga-section mga-section--contact">
+
+            <div class="row">
+                <div class="col-md-3 offset-md-2">
+                    <div class="mga-section__card mga-section__card--contact">
+                        <h2>Contact <span class="sr-only">with mygoldenart creator - Anna</span></h2>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--/mga-contact-->
+
+    <!-- 4. Footer-cover -->
+
+    <div class="mga-section mga-section--footer-cover">
+
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+
+    </div><!--/mga-footer-cover-->
+
+
+
+
+
+
+</div><!--/container-->
+
+</body>
+</html>
